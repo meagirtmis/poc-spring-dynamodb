@@ -11,34 +11,34 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 public class Product implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private String id;
-	private String name;
+	private String productID;
+	private String productName;
 
 	public Product() {
 	}
 
 	public Product(String id, String name) {
-		this.id = id;
-		this.name = name;
+		this.productID = id;
+		this.productName = name;
 	}
 
 	@DynamoDBHashKey(attributeName = "productId")
 	@DynamoDBAttribute
 	public String getId() {
-		return id;
+		return productID;
 	}
 
 	public void setId(String id) {
-		this.id = id;
+		this.productID = id;
 	}
 
 	@DynamoDBRangeKey
 	public String getName() {
-		return name;
+		return productName;
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.productName = name;
 	}
 
 }

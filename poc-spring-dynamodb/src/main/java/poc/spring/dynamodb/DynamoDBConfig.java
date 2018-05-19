@@ -30,6 +30,7 @@ public class DynamoDBConfig {
 		return new DynamoDBMapper(amazonDynamoDBConfig());
 	}
 
+	@Bean
 	public AmazonDynamoDB amazonDynamoDBConfig() {
 		return AmazonDynamoDBClientBuilder.standard()
 				.withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(awsDynamoDBEndPoint, awsRegion))
